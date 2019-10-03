@@ -775,7 +775,9 @@ function processAttrs (el) {
       }
       if (bindRE.test(name)) { // v-bind
         name = name.replace(bindRE, '')
-        value = parseFilters(value)
+        // pass v-bind name as value to allow shorthand binding
+        // <my-component :name> is now <my-component :name="name">
+        value = parseFilters(value) || name
         isDynamic = dynamicArgRE.test(name)
         if (isDynamic) {
           name = name.slice(1, -1)

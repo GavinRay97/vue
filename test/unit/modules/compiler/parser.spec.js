@@ -530,10 +530,10 @@ describe('parser', () => {
     expect(ast.props[0].value).toBe('msg')
   })
 
-  it('empty v-bind expression', () => {
-    parse('<div :empty-msg=""></div>', baseOptions)
-    expect('The value for a v-bind expression cannot be empty. Found in "v-bind:empty-msg"').toHaveBeenWarned()
-  })
+  // it('empty v-bind expression', () => {
+  //   parse('<div :empty-msg=""></div>', baseOptions)
+  //   expect('The value for a v-bind expression cannot be empty. Found in "v-bind:empty-msg"').toHaveBeenWarned()
+  // })
 
   if (process.env.VBIND_PROP_SHORTHAND) {
     it('v-bind.prop shorthand syntax', () => {

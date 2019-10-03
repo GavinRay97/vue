@@ -137,6 +137,14 @@ describe('codegen', () => {
     )
   })
 
+  it('generate v-bind directive with shorthand', () => {
+    assertCodegen(
+      '<p :test></p>',
+      `with(this){return _c('p',{attrs:{"test":test}})}`
+    )
+  })
+
+
   it('generate v-bind with prop directive', () => {
     assertCodegen(
       '<p v-bind.prop="test"></p>',
